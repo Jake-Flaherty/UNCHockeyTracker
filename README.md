@@ -23,6 +23,7 @@
 7. If any of this does not make sense OR stuff simply does not work text/call Jake Flaherty
 
 THINGS LEFT TO ADD:
+
 [] period by period data instead of full game
 
 [] error handling (if you somehow make an error you lose all data you haven't saved)
