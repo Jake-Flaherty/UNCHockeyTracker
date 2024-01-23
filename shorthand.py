@@ -39,9 +39,10 @@ def countingWords(word_array,teamdf):
             else:
                 teamdf.at[0, 'HitsOpp'] += 1
         if word.startswith('S'):
-            teamdf.at[0,'Shots'] += 1
-            if word.find('HOUSE') != -1:
-                teamdf.at[0,'ShotsFromHouse'] += 1
+            if word[1] != 'V':
+                teamdf.at[0,'Shots'] += 1
+                if word.find('HOUSE') != -1:
+                    teamdf.at[0,'ShotsFromHouse'] += 1
         if word.startswith('TO'):
             indivStats.loc[indivStats['Number']==int(re.findall(r'\d+', word)[0]),'TO'] += 1
             if word[0:3] == 'TOO':
@@ -59,6 +60,8 @@ def countingWords(word_array,teamdf):
             teamdf.at[0, 'PP'] += 1
         if word.startswith('SV'):
             teamdf.at[0, 'Saves'] += 1
+            indivStats.loc[indivStats['Number']==int(re.findall(r'\d+', word)[0]),'Saves'] += 1
+
             
     print(indivStats)
     print(teamdf)
