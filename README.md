@@ -24,5 +24,7 @@
 
 THINGS LEFT TO ADD:
 [] period by period data instead of full game
+
 [] error handling (if you somehow make an error you lose all data you haven't saved)
+
 [] change stats on screen by period not just full game
