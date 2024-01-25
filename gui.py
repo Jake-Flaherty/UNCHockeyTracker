@@ -54,32 +54,37 @@ class GUI:
         #Get text and store it
         entered_text = self.entry.get()
 
+        try:
+
         #Do something with it
-        print("Text entered:", entered_text)
-        countOfStuff = countingWords(split_and_edit(entered_text), teamStats)
+            print("Text entered:", entered_text)
+            countOfStuff = countingWords(split_and_edit(entered_text), teamStats)
 
-        faceoffPerc = 0
-        if int(teamStats['FaceoffAttempts']) != 0:
-            faceoffPerc = int(teamStats['FaceoffWins'])/int(teamStats['FaceoffAttempts']) * 100
-        UNCshots = int(teamStats['Shots'])
-        OPPshots = int(teamStats['Saves'])
-        TOcount = int(teamStats['TOO']) + int(teamStats['TON']) + int(teamStats['TOD'])
-        UNChits = int(teamStats['Hits'])
-        OPPhits = int(teamStats['HitsOpp'])
+            faceoffPerc = 0
+            if int(teamStats['FaceoffAttempts']) != 0:
+                faceoffPerc = int(teamStats['FaceoffWins'])/int(teamStats['FaceoffAttempts']) * 100
+            UNCshots = int(teamStats['Shots'])
+            OPPshots = int(teamStats['Saves'])
+            TOcount = int(teamStats['TOO']) + int(teamStats['TON']) + int(teamStats['TOD'])
+            UNChits = int(teamStats['Hits'])
+            OPPhits = int(teamStats['HitsOpp'])
 
-        textFinal = f'''
-        UNC Faceoff Percentage: {faceoffPerc}
-        Faceoff Attempts: {int(teamStats['FaceoffAttempts'])}
-        UNC has: {UNCshots} shots
-        OPPS has: {OPPshots} shots
-        UNC has: {TOcount} turnovers
-        UNC has: {UNChits} hits
-        OPPS has: {OPPhits} hits
-        '''
+            textFinal = f'''
+            UNC Faceoff Percentage: {faceoffPerc}
+            Faceoff Attempts: {int(teamStats['FaceoffAttempts'])}
+            UNC has: {UNCshots} shots
+            OPPS has: {OPPshots} shots
+            UNC has: {TOcount} turnovers
+            UNC has: {UNChits} hits
+            OPPS has: {OPPhits} hits
+            '''
 
-        self.currentEvents['text'] = textFinal
-        #Clear the box
-        self.entry.delete(0, tk.END)
+            self.currentEvents['text'] = textFinal
+            #Clear the box
+            self.entry.delete(0, tk.END)
+
+        except:
+            self.currentEvents['text'] = "There was an error try again!"
 
     def on_save_button(self):
         save_team_as_csv(teamStats)
