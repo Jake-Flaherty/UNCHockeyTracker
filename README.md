@@ -26,10 +26,10 @@
 
 THINGS LEFT TO ADD:
 
-[] plus minus tracking
+[X] plus minus tracking
 
 [] period by period data instead of full game
 
-[] error handling (if you somehow make an error you lose all data you haven't saved)
+[X] error handling (if you somehow make an error you lose all data you haven't saved)
 
 [] change stats on screen by period not just full game
