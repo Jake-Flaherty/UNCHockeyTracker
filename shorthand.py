@@ -17,7 +17,7 @@ def create_team_stats():
     return pd.DataFrame([[0,0,0,0,0,0,0,0,0,0,0,0,0,0]], columns=['FaceoffAttempts', 'FaceoffWins', 'Hits', 'Shots', 'ShotsFromHouse', 'TOO', 'TON', 'TOD', 'PEN', 'PIM', 'PK', 'PP', 'Saves', 'HitsOpp'])
 
 # Load individual stats from a file
-def load_indiv_stats(file_path='23-34 Roster Empty - Sheet1.csv'):
+def load_indiv_stats(file_path='24-25 Roster Empty.csv'):
     return pd.read_csv(file_path)
 
 # Split and edit text

@@ -111,7 +111,7 @@ class GUI:
 
     def populate_roster_tab(self):
         # Read the CSV file
-        df = pd.read_csv('23-34 Roster Empty - Sheet1.csv')
+        df = pd.read_csv('24-25 Roster Empty.csv')
 
         # Create a treeview to display the roster
         roster_tree = ttk.Treeview(self.tabs['Roster'])
