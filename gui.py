@@ -152,7 +152,7 @@ class GUI:
             if int(team_data['FaceoffAttempts']) != 0:
                 faceoffPerc = int(team_data['FaceoffWins']) / int(team_data['FaceoffAttempts']) * 100
             UNCshots = int(team_data['Shots'])
-            OPPshots = int(team_data['Saves'])
+            OPPshots = int(team_data['ShotsFaced'])
             TOcount = int(team_data['TOO']) + int(team_data['TON']) + int(team_data['TOD'])
             UNChits = int(team_data['Hits'])
             OPPhits = int(team_data['HitsOpp'])
