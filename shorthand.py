@@ -71,6 +71,7 @@ def countingWords(word_array, teamdf, indivStats):
         if word.startswith('SV'):
             teamdf.at[0, 'ShotsFaced'] += 1
             indivStats.loc[indivStats['Number'] == int(re.findall(r'\d+', word)[0]), 'Saves'] += 1
+            indivStats.loc[indivStats['Number'] == int(re.findall(r'\d+', word)[0]), 'ShotsFaced'] += 1
         if word.startswith('+'):
             indivStats.loc[indivStats['Number'] == int(re.findall(r'\d+', word)[0]), 'Plus/Minus'] += 1
         if word.startswith('-'):
