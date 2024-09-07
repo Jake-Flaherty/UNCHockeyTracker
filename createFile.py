@@ -26,7 +26,7 @@ def save_indiv_as_csv(dataframe, tab_name=None):
 
 def combine_csvs(tab_names, output_file_name):
     # Initialize an empty DataFrame with the same columns as the data
-    aggregated_df = pd.DataFrame(columns=['FaceoffAttempts', 'FaceoffWins', 'Hits', 'Shots', 'ShotsFromHouse', 'TOO', 'TON', 'TOD', 'PEN', 'PIM', 'PK', 'PP', 'Saves', 'HitsOpp'])
+    aggregated_df = pd.DataFrame(columns=['FaceoffAttempts', 'FaceoffWins', 'Hits', 'Shots', 'ShotsFromHouse', 'TOO', 'TON', 'TOD', 'PEN', 'PIM', 'PK', 'PPG', 'ShotsFaced', 'HitsOpp', 'OppPEN'])
 
     for tab_name in tab_names:
         date_str = datetime.datetime.now().strftime("%Y-%m-%d")
